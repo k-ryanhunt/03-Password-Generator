@@ -11,18 +11,25 @@ var confirmLowercase;
 var choices;
 var enter;
 
+
 if (generateBtn.addEventListener("click", writePassword)) {
   writePassword();
 }
 
-function writePassword() {
 
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+
+function generatePassword() {
   var Length = window.prompt("How many characters would you like your password to be?");
   if (!Length) { return; }
   while (Length < 8 || Length > 128) {
     Length = prompt("Length must be 8-128 characters. How many characters would you like your password to be?");
   }
-
   var uppercase = confirm("Would you like to use uppercase letters?");
   var lowercase = confirm("Would you like to use lowercase letters?");
   var Numbers = confirm("Would you like to use numbers?");
@@ -34,7 +41,6 @@ function writePassword() {
     Numbers = confirm("Would you like to use numbers?");
     Symbols = confirm("Would you like to use special characters?");
   }
-
   if (confirmSymbols && confirmNumber && confirmUppercase && confirmLowercase) {
     choices = character.concat(number, alpha, alpha2);
   }
@@ -78,18 +84,8 @@ function writePassword() {
     choices = alpha;
   }
 
-  var password = [];
 
   for (var i = 0; i < enter; i++) {
-    var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+    var password = choices[Math.floor(Math.random() * choices.length)];
     password.push(pickChoices);
-  }
-
-  function UserInput(ps) {
-    document.getElementById("#password").textContent = ps;
-  }
-
-  var ps = password.join("");
-  UserInput(ps);
-  return ps;
-}
+  }}
