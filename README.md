@@ -9,7 +9,8 @@ This week’s homework required us to modify starter code to create an applicati
 I first created all of the possible characters into variables.  I then created window prompts to let the user choose what type of symbols, numbers, uppercase, and lowercase characters that they wanted to include.  After they go through the prompts and they select at least one option, it shows them the secure password that has been generated for them.
 
 ## Example of a password that could be generated:
-![Screenshot]("./assets/images/PasswordGeneratePage.png")
+![Screenshot](./assets/images/PasswordGeneratePage.png)
 
 ## Check out the live website here!
 
+https://k-ryanhunt.github.io/Password-Generator/
